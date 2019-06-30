@@ -36,7 +36,7 @@ namespace EncryptProject
 		#region InitalParams
 
         //実行モードの設定
-		const EExcuteMode MODE = EExcuteMode.Decrypt;
+		const EExcuteMode MODE = EExcuteMode.MakeKey;
 		const bool ISDEBUGMODE = false;//デバッグモードの設定
 		public const int KEYLENGTH = 190;
         public const string PUBLICKEYNAME = "PublicKey.bin";
@@ -125,9 +125,6 @@ namespace EncryptProject
 			//出力
 			FileManager.OutputPublicKey(B, P, "PublicKey.bin");
 			FileManager.OutputPrivateKey(Kp, "PrivateKey.bin");
-
-            Console.WriteLine("出力が完了しました．");
-            Console.WriteLine("PrivateKey.binとPublicKey.binの生成を確認してください．");
 		}
 
 		public void EncryptMode(string pathin)
@@ -148,16 +145,13 @@ namespace EncryptProject
 
 			//暗号文の出力
 			FileManager.OutputEncryptFile(M1, M2, string.Concat(pathin, "_enc"));
-
-            Console.WriteLine("出力が完了しました．");
-            Console.WriteLine("出力ファイル名_encの生成を確認してください．");
 		}
 
 		//復号
 		public void DecryptMode(string arg)
 		{
 			//暗号文の読み込み
-			FileManager.LoadEncryption(string.Concat(arg),
+			FileManager.LoadEncryption(string.Concat(arg, "_enc"),
 				out Ep M1, out Ep M2);
 
 			//秘密鍵の読み込み
@@ -169,10 +163,7 @@ namespace EncryptProject
 
 			//復号文の出力
 			FileManager.OutputDecryptedMsg(m, string.Concat(arg, "_dec"));
-
-            Console.WriteLine("出力が完了しました．");
-            Console.WriteLine("出力ファイル名_decの生成を確認してください．");
-        }
+		}
 
 		#endregion
 

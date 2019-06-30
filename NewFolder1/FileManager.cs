@@ -35,7 +35,7 @@ namespace EncryptProject
 		{
 			byte[] buf = BasicLoad(str);
             string encryption = Encoding.ASCII.GetString(buf);
-            string[] allM = encryption.Split('_');
+            string[] allM = encryption.Split("_");
 			
 
 			M1 = new Ep(BigInteger.Parse(allM[0]), BigInteger.Parse(allM[1]));
@@ -109,7 +109,7 @@ namespace EncryptProject
 			FileStream fs = new FileStream(
 				@str, FileMode.Open, FileAccess.Read);
 			byte[] buf = new byte[(int)fs.Length];
-			fs.Read(buf, 0, buf.Length);
+			fs.Read(buf);
 			fs.Dispose();
 			return buf;
 		}

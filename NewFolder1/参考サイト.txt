@@ -1,0 +1,11 @@
+バイナリ・ファイルを読み書きするには？［C#、VB］
+https://www.atmarkit.co.jp/ait/articles/0711/08/news120.html
+バイナリファイルの読み込みに使用
+
+未確認飛行C
+https://ufcpp.net/study/csharp/oo_operator.html
+演算子のオーバーロードに使用
+
+
+http://www3.jeed.or.jp/chiba/college/data/kiyou/h28/H28-02.pdf
+楕円曲線暗号の実装の参考
